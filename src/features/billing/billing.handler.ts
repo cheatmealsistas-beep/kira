@@ -7,6 +7,14 @@ export async function handlePortalSession(
   returnUrl?: string
 ): Promise<BillingState> {
   try {
+    // Check if Stripe is configured
+    if (!stripe) {
+      return {
+        success: false,
+        error: 'Billing is not configured',
+      };
+    }
+
     // Get customer from database
     const customer = await getCustomer(userId);
 
