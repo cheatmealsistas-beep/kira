@@ -13,7 +13,7 @@ import {
 import { usePushNotifications } from '@/shared/hooks';
 
 export function NotificationSettings() {
-  const t = useTranslations('myAccount');
+  const t = useTranslations('my-account');
   const {
     isSupported,
     permission,

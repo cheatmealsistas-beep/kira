@@ -27,5 +27,7 @@
   "enableNotifications": "Activar recordatorios",
   "disableNotifications": "Desactivar",
   "notificationsBlocked": "Notificaciones bloqueadas en tu navegador",
-  "notificationsNotSupported": "Tu navegador no soporta notificaciones"
+  "notificationsNotSupported": "Tu navegador no soporta notificaciones",
+  "noTrainingProfile": "Aún no has configurado tus preferencias de entreno",
+  "setupTraining": "Configurar entreno"
 }

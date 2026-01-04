@@ -27,5 +27,7 @@
   "enableNotifications": "Enable reminders",
   "disableNotifications": "Disable",
   "notificationsBlocked": "Notifications blocked in browser settings",
-  "notificationsNotSupported": "Your browser does not support notifications"
+  "notificationsNotSupported": "Your browser does not support notifications",
+  "noTrainingProfile": "You haven't set up your training preferences yet",
+  "setupTraining": "Set up training"
 }

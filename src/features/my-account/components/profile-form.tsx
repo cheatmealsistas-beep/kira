@@ -15,7 +15,7 @@ interface ProfileFormProps {
 }
 
 export function ProfileForm({ profile }: ProfileFormProps) {
-  const t = useTranslations('myAccount');
+  const t = useTranslations('my-account');
   const tUI = useTranslations('ui');
   const [state, formAction, pending] = useActionState(updateProfileAction, null);
 
