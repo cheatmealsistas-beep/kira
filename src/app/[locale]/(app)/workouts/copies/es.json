@@ -1,0 +1,57 @@
+{
+  "feedback": {
+    "title": "Como te ha ido?",
+    "description": "Tu feedback nos ayuda a personalizar tu entrenamiento.",
+    "howDoYouFeel": "Como te sientes?",
+    "howWasIt": "Como ha sido de duro?",
+    "easy": "Facil",
+    "hard": "Duro",
+    "notes": "Notas",
+    "optional": "opcional",
+    "notesPlaceholder": "Algo que anotar? Dolor, energia, etc.",
+    "skip": "Saltar",
+    "submit": "Guardar",
+    "saving": "Guardando..."
+  },
+  "programs": {
+    "selectProgram": "Elige tu programa",
+    "selectProgramDescription": "Escoge un programa que encaje con tu vida y objetivos.",
+    "noPrograms": "No hay programas disponibles",
+    "noProgramsDescription": "Estamos preparando nuevos programas. Vuelve pronto.",
+    "daysPerWeek": "días/semana",
+    "weeks": "semanas",
+    "startProgram": "Empezar este programa",
+    "enrolling": "Preparando...",
+    "enrolled": "Listo. A entrenar",
+    "enrollError": "Algo falló. Inténtalo de nuevo.",
+
+    "exercise": "Ejercicio",
+    "set": "Serie",
+    "sets": "Series",
+    "week": "Semana",
+    "weight": "Peso",
+    "resting": "Descanso",
+    "skipRest": "Saltar",
+    "lastTime": "La última vez",
+
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "completeSet": "Completar serie",
+    "nextExercise": "Siguiente ejercicio",
+    "finishWorkout": "Terminar entreno",
+    "saving": "Guardando...",
+
+    "wellDone": "Genial",
+    "sessionCompleted": "Entreno guardado",
+    "sessionCompletedMessage": "Cada sesión cuenta. Te estás haciendo más fuerte.",
+    "sessionError": "No se pudo guardar. Inténtalo de nuevo.",
+    "backToDashboard": "Volver al inicio",
+    "noExercises": "No hay ejercicios en esta sesión",
+
+    "restDayTitle": "Hoy no toca entrenar",
+    "restDayDescription": "Según tu programa de {days} días, hoy es día de descanso.",
+    "recommended": "Recomendado",
+    "nextInProgram": "Siguiente en tu programa",
+    "otherSessions": "Otras sesiones"
+  }
+}

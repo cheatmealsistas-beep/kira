@@ -1,0 +1,57 @@
+{
+  "feedback": {
+    "title": "How did it go?",
+    "description": "Your feedback helps us personalize your training.",
+    "howDoYouFeel": "How do you feel?",
+    "howWasIt": "How hard was it?",
+    "easy": "Easy",
+    "hard": "Hard",
+    "notes": "Notes",
+    "optional": "optional",
+    "notesPlaceholder": "Anything to note? Pain, energy, etc.",
+    "skip": "Skip",
+    "submit": "Save",
+    "saving": "Saving..."
+  },
+  "programs": {
+    "selectProgram": "Choose Your Program",
+    "selectProgramDescription": "Pick a training program that fits your lifestyle and goals.",
+    "noPrograms": "No Programs Available",
+    "noProgramsDescription": "We're preparing new programs for you. Check back soon!",
+    "daysPerWeek": "days/week",
+    "weeks": "weeks",
+    "startProgram": "Start This Program",
+    "enrolling": "Setting up...",
+    "enrolled": "You're in! Let's get started",
+    "enrollError": "Something went wrong. Try again.",
+
+    "exercise": "Exercise",
+    "set": "Set",
+    "sets": "Sets",
+    "week": "Week",
+    "weight": "Weight",
+    "resting": "Rest",
+    "skipRest": "Skip",
+    "lastTime": "Last time",
+
+    "previous": "Previous",
+    "next": "Next",
+    "completeSet": "Complete Set",
+    "nextExercise": "Next Exercise",
+    "finishWorkout": "Finish Workout",
+    "saving": "Saving...",
+
+    "wellDone": "Great job!",
+    "sessionCompleted": "Workout saved!",
+    "sessionCompletedMessage": "Every session counts. You're getting stronger.",
+    "sessionError": "Couldn't save. Try again.",
+    "backToDashboard": "Back to Home",
+    "noExercises": "No exercises in this session",
+
+    "restDayTitle": "Rest Day",
+    "restDayDescription": "According to your {days}-day program, today is a rest day.",
+    "recommended": "Recommended",
+    "nextInProgram": "Next in your program",
+    "otherSessions": "Other sessions"
+  }
+}

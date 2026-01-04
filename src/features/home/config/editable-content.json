@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "badge": {
+      "en": "Your body, your rhythm",
+      "es": "Tu cuerpo, tu ritmo"
+    },
+    "headline": {
+      "en": "Train according to",
+      "es": "Entrena según"
+    },
+    "headlineHighlight": {
+      "en": "Your Energy",
+      "es": "Tu Energía"
+    },
+    "subheadline": {
+      "en": "Personalized workouts that adapt to how you feel today. Designed for women 40+ who want to feel strong without burning out.",
+      "es": "Entrenamientos personalizados que se adaptan a cómo te sientes hoy. Diseñado para mujeres de 40+ que quieren sentirse fuertes sin agotarse."
+    },
+    "ctaPrimary": {
+      "en": "Start Free",
+      "es": "Empezar Gratis"
+    },
+    "ctaSecondary": {
+      "en": "See How It Works",
+      "es": "Ver Cómo Funciona"
+    },
+    "socialProofText": {
+      "en": "Join women who train smarter, not harder",
+      "es": "Únete a mujeres que entrenan de forma inteligente"
+    }
+  },
+  "features": {
+    "headline": {
+      "en": "Your body knows best",
+      "es": "Tu cuerpo sabe"
+    },
+    "subheadline": {
+      "en": "Kira listens to how you feel and adjusts your workout accordingly",
+      "es": "Kira escucha cómo te sientes y ajusta tu entrenamiento"
+    }
+  },
+  "pricing": {
+    "headline": {
+      "en": "Invest in yourself",
+      "es": "Invierte en ti"
+    },
+    "subheadline": {
+      "en": "Start free. Upgrade when you want to unlock your full potential.",
+      "es": "Empieza gratis. Mejora cuando quieras desbloquear todo tu potencial."
+    },
+    "badge": {
+      "en": "Most popular",
+      "es": "Más popular"
+    }
+  },
+  "cta": {
+    "headline": {
+      "en": "Ready to feel stronger?",
+      "es": "¿Lista para sentirte más fuerte?"
+    },
+    "subheadline": {
+      "en": "Start your personalized training journey today. No gym required.",
+      "es": "Comienza tu viaje de entrenamiento personalizado hoy. Sin necesidad de gimnasio."
+    },
+    "ctaPrimary": {
+      "en": "Start Free",
+      "es": "Empezar Gratis"
+    },
+    "ctaSecondary": {
+      "en": "Learn More",
+      "es": "Saber Más"
+    }
+  }
+}

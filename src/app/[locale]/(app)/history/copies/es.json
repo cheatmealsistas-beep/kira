@@ -1,0 +1,28 @@
+{
+  "title": "Tu historial",
+  "subtitle": "Cada entreno cuenta. Mira todo lo que has logrado.",
+  "empty": {
+    "title": "Todavia sin entrenamientos",
+    "description": "Cuando completes tu primera sesion, aparecera aqui."
+  },
+  "stats": {
+    "total": "Total",
+    "thisWeek": "Esta semana",
+    "thisMonth": "Este mes",
+    "currentStreak": "Racha actual",
+    "longestStreak": "Mejor racha",
+    "avgDifficulty": "Dificultad media"
+  },
+  "entry": {
+    "exercises": "ejercicios",
+    "difficulty": "Dificultad"
+  },
+  "feelings": {
+    "exhausted": "Agotada",
+    "tired": "Cansada",
+    "good": "Bien",
+    "strong": "Fuerte",
+    "energized": "Con energia"
+  },
+  "loadMore": "Cargar mas"
+}

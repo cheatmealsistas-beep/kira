@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Kira app icon - K monogram -->
+  <rect width="512" height="512" rx="112" fill="url(#bg-gradient)"/>
+
+  <!-- K letter - clean geometric -->
+  <path d="M152 112 L152 400" stroke="white" stroke-width="52" stroke-linecap="round"/>
+  <path d="M152 256 L340 112" stroke="white" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M152 256 L340 400" stroke="white" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" y1="512" x2="512" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#be123c"/>
+      <stop offset="1" stop-color="#f43f5e"/>
+    </linearGradient>
+  </defs>
+</svg>

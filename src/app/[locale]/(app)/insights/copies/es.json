@@ -1,0 +1,24 @@
+{
+  "title": "Tus Insights",
+  "subtitle": "Descubre tus patrones de energía y entrenamiento",
+  "emptyState": "Empieza a registrar tu energía y entrenamientos para ver tus patrones.",
+  "last30Days": "Últimos 30 días",
+  "energyPattern": "Tu patrón de energía",
+  "dominantEnergy": "Energía dominante",
+  "highEnergyDays": "Días alta energía",
+  "lowEnergyDays": "Días baja energía",
+  "daysTracked": "Días registrados",
+  "weekdayPatterns": "Patrones por día",
+  "performanceByEnergy": "Rendimiento por nivel de energía",
+  "workouts": "entrenos",
+  "completed": "completados",
+  "avgDuration": "duración media",
+  "stats": {
+    "totalWorkouts": "Entrenamientos",
+    "currentStreak": "Racha actual",
+    "bestStreak": "Mejor racha",
+    "avgDuration": "Duración media",
+    "days": "días",
+    "min": "min"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Your history",
+  "subtitle": "Every workout counts. See how far you've come.",
+  "empty": {
+    "title": "No workouts yet",
+    "description": "When you complete your first session, it will appear here."
+  },
+  "stats": {
+    "total": "Total",
+    "thisWeek": "This week",
+    "thisMonth": "This month",
+    "currentStreak": "Current streak",
+    "longestStreak": "Best streak",
+    "avgDifficulty": "Avg difficulty"
+  },
+  "entry": {
+    "exercises": "exercises",
+    "difficulty": "Difficulty"
+  },
+  "feelings": {
+    "exhausted": "Exhausted",
+    "tired": "Tired",
+    "good": "Good",
+    "strong": "Strong",
+    "energized": "Energized"
+  },
+  "loadMore": "Load more"
+}

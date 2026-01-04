@@ -1,0 +1,24 @@
+{
+  "title": "Your Insights",
+  "subtitle": "Discover your energy and training patterns",
+  "emptyState": "Start tracking your energy and workouts to see your patterns.",
+  "last30Days": "Last 30 days",
+  "energyPattern": "Your energy pattern",
+  "dominantEnergy": "Dominant energy",
+  "highEnergyDays": "High energy days",
+  "lowEnergyDays": "Low energy days",
+  "daysTracked": "Days tracked",
+  "weekdayPatterns": "Weekday patterns",
+  "performanceByEnergy": "Performance by energy level",
+  "workouts": "workouts",
+  "completed": "completed",
+  "avgDuration": "avg duration",
+  "stats": {
+    "totalWorkouts": "Total workouts",
+    "currentStreak": "Current streak",
+    "bestStreak": "Best streak",
+    "avgDuration": "Avg duration",
+    "days": "days",
+    "min": "min"
+  }
+}
