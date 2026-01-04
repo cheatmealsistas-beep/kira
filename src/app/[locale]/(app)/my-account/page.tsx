@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { ProfileForm, TrainingSettingsForm, NotificationSettings, getProfileAction } from '@/features/my-account';
-import { getFitnessProfile } from '@/features/onboarding';
+import { getFitnessProfile } from '@/features/onboarding/onboarding.query';
 import {
   getSubscription,
   SubscriptionCard,

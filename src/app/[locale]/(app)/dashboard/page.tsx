@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import { KiraDashboard } from '@/features/dashboard';
 import { getTodayEnergy, getWeeklyProgress } from '@/features/dashboard/dashboard.query';
 import { requireUser, getUser } from '@/shared/auth';
-import { hasCompletedOnboarding, getTodaySuggestedWorkout } from '@/features/onboarding';
+import { hasCompletedOnboarding, getTodaySuggestedWorkout } from '@/features/onboarding/onboarding.query';
 
 interface DashboardPageProps {
   params: Promise<{ locale: string }>;

@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { requireUser, getUser } from '@/shared/auth';
-import { hasCompletedOnboarding, OnboardingFlow } from '@/features/onboarding';
+import { OnboardingFlow } from '@/features/onboarding';
+import { hasCompletedOnboarding } from '@/features/onboarding/onboarding.query';
 
 interface OnboardingPageProps {
   params: Promise<{ locale: string }>;
