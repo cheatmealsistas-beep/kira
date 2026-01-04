@@ -57,6 +57,17 @@ export interface ProgramSession {
   exercises?: ProgramExercise[];
 }
 
+// Ficha de instrucciones del ejercicio
+export interface ExerciseCard {
+  position?: { en: string; es: string };
+  grip?: { en: string; es: string };
+  movement?: { en: string; es: string };
+  targetMuscles?: { en: string; es: string };
+  keyCue?: { en: string; es: string };
+  commonMistake?: { en: string; es: string };
+  safetyTip?: { en: string; es: string };
+}
+
 export interface ProgramExercise {
   id: string;
   sessionId: string;
@@ -75,6 +86,7 @@ export interface ProgramExercise {
     name: { en: string; es: string };
     muscleGroup: string;
     equipment: string[];
+    card?: ExerciseCard;
   };
 }
 

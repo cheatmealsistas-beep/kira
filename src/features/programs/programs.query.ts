@@ -8,6 +8,7 @@ import type {
   ExerciseSuggestion,
   ProgressionReason,
   ProgressionType,
+  ExerciseCard,
 } from './types';
 import { PROGRESSION_CONFIG } from './types';
 
@@ -147,7 +148,21 @@ export async function getProgramWithSessions(programId: string): Promise<{
           name_en,
           name_es,
           primary_muscle,
-          equipment_required
+          equipment_required,
+          card_position_en,
+          card_position_es,
+          card_grip_en,
+          card_grip_es,
+          card_movement_en,
+          card_movement_es,
+          card_target_muscles_en,
+          card_target_muscles_es,
+          card_key_cue_en,
+          card_key_cue_es,
+          card_common_mistake_en,
+          card_common_mistake_es,
+          card_safety_tip_en,
+          card_safety_tip_es
         )
       )
     `)
@@ -630,6 +645,35 @@ function mapSession(data: Record<string, unknown>): ProgramSession {
 function mapProgramExercise(data: Record<string, unknown>): ProgramExercise {
   const exercises = data.exercises as Record<string, unknown> | null;
 
+  // Construir objeto card con las instrucciones del ejercicio
+  const buildCard = (ex: Record<string, unknown>): ExerciseCard | undefined => {
+    const card: ExerciseCard = {};
+
+    if (ex.card_position_en || ex.card_position_es) {
+      card.position = { en: (ex.card_position_en as string) || '', es: (ex.card_position_es as string) || '' };
+    }
+    if (ex.card_grip_en || ex.card_grip_es) {
+      card.grip = { en: (ex.card_grip_en as string) || '', es: (ex.card_grip_es as string) || '' };
+    }
+    if (ex.card_movement_en || ex.card_movement_es) {
+      card.movement = { en: (ex.card_movement_en as string) || '', es: (ex.card_movement_es as string) || '' };
+    }
+    if (ex.card_target_muscles_en || ex.card_target_muscles_es) {
+      card.targetMuscles = { en: (ex.card_target_muscles_en as string) || '', es: (ex.card_target_muscles_es as string) || '' };
+    }
+    if (ex.card_key_cue_en || ex.card_key_cue_es) {
+      card.keyCue = { en: (ex.card_key_cue_en as string) || '', es: (ex.card_key_cue_es as string) || '' };
+    }
+    if (ex.card_common_mistake_en || ex.card_common_mistake_es) {
+      card.commonMistake = { en: (ex.card_common_mistake_en as string) || '', es: (ex.card_common_mistake_es as string) || '' };
+    }
+    if (ex.card_safety_tip_en || ex.card_safety_tip_es) {
+      card.safetyTip = { en: (ex.card_safety_tip_en as string) || '', es: (ex.card_safety_tip_es as string) || '' };
+    }
+
+    return Object.keys(card).length > 0 ? card : undefined;
+  };
+
   return {
     id: data.id as string,
     sessionId: data.session_id as string,
@@ -651,6 +695,7 @@ function mapProgramExercise(data: Record<string, unknown>): ProgramExercise {
           },
           muscleGroup: exercises.primary_muscle as string,
           equipment: exercises.equipment_required as string[],
+          card: buildCard(exercises),
         }
       : undefined,
   };
