@@ -1,4 +1,4 @@
-import { createClientServer } from '@/shared/database/supabase';
+import { createClientServer } from '@/shared/database/supabase/server';
 import { redirect } from 'next/navigation';
 import { getUser } from './session';
 import { isEmailWhitelisted } from '@/shared/lib/admin-whitelist';

@@ -1,4 +1,4 @@
-import { createClientServer } from '@/shared/database/supabase';
+import { createClientServer } from '@/shared/database/supabase/server';
 import type { EnergyLevel, DBEnergyLevel } from './types';
 import { energyLevelToDb } from './types';
 

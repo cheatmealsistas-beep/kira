@@ -1,4 +1,4 @@
-import { createClientServer } from '@/shared/database/supabase';
+import { createClientServer } from '@/shared/database/supabase/server';
 
 /**
  * Get the current authenticated user session

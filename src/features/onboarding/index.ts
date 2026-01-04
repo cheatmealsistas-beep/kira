@@ -1,24 +1,7 @@
 // Components
 export { OnboardingFlow } from './components';
 
-// Queries
-export {
-  getFitnessProfile,
-  hasCompletedOnboarding,
-  getCurrentWeekPlan,
-  getTodaySuggestedWorkout,
-  generateTrainingSchedule,
-} from './onboarding.query';
-
-// Commands
-export {
-  saveFitnessProfile,
-  updateTrainingDays,
-  generateWeeklyPlan,
-  updateFitnessProfile,
-} from './onboarding.command';
-
-// Actions
+// Actions (safe for client components - they are server actions)
 export {
   completeOnboardingAction,
   updateTrainingDaysAction,

@@ -1,4 +1,4 @@
-import { createClientServer } from '@/shared/database/supabase';
+import { createClientServer } from '@/shared/database/supabase/server';
 import type { FitnessProfile, WeeklyTrainingPlan, WeeklyPlanDay, TrainingDayType } from './types';
 
 /**

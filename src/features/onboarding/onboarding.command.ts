@@ -1,4 +1,4 @@
-import { createClientServer } from '@/shared/database/supabase';
+import { createClientServer } from '@/shared/database/supabase/server';
 import type { FitnessProfileInput, TrainingDayType } from './types';
 import { generateTrainingSchedule } from './onboarding.query';
 import { trainingDayLabels } from './types';

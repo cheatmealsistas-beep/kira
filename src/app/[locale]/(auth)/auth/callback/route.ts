@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createClientServer } from '@/shared/database/supabase';
+import { createClientServer } from '@/shared/database/supabase/server';
 import { syncAdminRoleFromWhitelist } from '@/shared/auth/roles';
 
 export async function GET(request: Request) {
