@@ -352,12 +352,30 @@ export function WorkoutSession({ workout: initialWorkout, energyLevel, previousW
 
                       {/* Instructions */}
                       <div className="flex items-start gap-2">
-                        <Info className="h-4 w-4 text-primary mt-0.5" />
-                        <div>
-                          <p className="text-xs font-medium text-primary">Cómo hacerlo</p>
-                          <p className="text-sm text-muted-foreground">
-                            {exercise.instructions}
-                          </p>
+                        <Info className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                        <div className="flex-1">
+                          <p className="text-xs font-medium text-primary mb-2">Cómo hacerlo</p>
+                          <div className="text-sm text-muted-foreground space-y-2">
+                            {exercise.instructions.split('\n\n').map((paragraph, pi) => {
+                              const isHeader = /^(POSICIÓN|AGARRE|MOVIMIENTO|MÚSCULOS|CLAVE|ERROR COMÚN|SEGURIDAD|CONSEJO|BENEFICIO|BENEFICIOS|RITMO|TÉCNICA|SECUENCIA|VERSIONES|PROGRESIÓN|MODIFICACIÓN|FINAL):/.test(paragraph);
+
+                              if (isHeader) {
+                                const [header, ...content] = paragraph.split(':');
+                                const contentText = content.join(':').trim();
+                                return (
+                                  <div key={pi}>
+                                    <p className="font-semibold text-foreground text-xs uppercase tracking-wide mb-0.5">
+                                      {header}
+                                    </p>
+                                    <p className="whitespace-pre-line">{contentText}</p>
+                                  </div>
+                                );
+                              }
+                              return (
+                                <p key={pi} className="whitespace-pre-line">{paragraph}</p>
+                              );
+                            })}
+                          </div>
                         </div>
                       </div>
 
@@ -682,10 +700,34 @@ export function WorkoutSession({ workout: initialWorkout, energyLevel, previousW
         {currentExercise.instructions && (
           <Card className="border-0 shadow-md mb-6">
             <CardContent className="p-4">
-              <p className="text-sm font-medium text-primary mb-2">💡 Cómo hacerlo</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {currentExercise.instructions}
-              </p>
+              <p className="text-sm font-medium text-primary mb-3">💡 Cómo hacerlo</p>
+              <div className="text-muted-foreground text-sm leading-relaxed space-y-3">
+                {currentExercise.instructions.split('\n\n').map((paragraph, i) => {
+                  // Check if it's a section header (POSICIÓN:, AGARRE:, etc.)
+                  const isHeader = /^(POSICIÓN|AGARRE|MOVIMIENTO|MÚSCULOS|CLAVE|ERROR COMÚN|SEGURIDAD|CONSEJO|BENEFICIO|BENEFICIOS|RITMO|TÉCNICA|SECUENCIA|VERSIONES|PROGRESIÓN|MODIFICACIÓN|FINAL):/.test(paragraph);
+
+                  if (isHeader) {
+                    const [header, ...content] = paragraph.split(':');
+                    const contentText = content.join(':').trim();
+
+                    return (
+                      <div key={i}>
+                        <p className="font-semibold text-foreground text-xs uppercase tracking-wide mb-1">
+                          {header}
+                        </p>
+                        <p className="whitespace-pre-line">{contentText}</p>
+                      </div>
+                    );
+                  }
+
+                  // Regular paragraph or numbered list
+                  return (
+                    <p key={i} className="whitespace-pre-line">
+                      {paragraph}
+                    </p>
+                  );
+                })}
+              </div>
             </CardContent>
           </Card>
         )}
