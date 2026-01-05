@@ -6,15 +6,9 @@ import { toast } from 'sonner';
 import {
   ChevronLeft,
   ChevronRight,
-  ChevronDown,
-  Play,
   Check,
-  Pause,
-  RotateCcw,
   Trophy,
   Dumbbell,
-  Clock,
-  Info,
   TrendingUp,
   Minus,
   Plus,
@@ -62,7 +56,6 @@ export function ProgramSessionView({
   const [isPending, startTransition] = useTransition();
   const [isCompleted, setIsCompleted] = useState(false);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
-  const [showInstructions, setShowInstructions] = useState(false);
 
   const exercises = session.exercises || [];
   const currentExercise = exercises[currentExerciseIndex];
@@ -100,11 +93,6 @@ export function ProgramSessionView({
     }
     return () => clearInterval(interval);
   }, [isResting, restTimeLeft]);
-
-  // Close instructions when exercise changes
-  useEffect(() => {
-    setShowInstructions(false);
-  }, [currentExerciseIndex]);
 
   const getCurrentExerciseState = useCallback(() => {
     if (!currentExercise) return null;
@@ -329,109 +317,6 @@ export function ProgramSessionView({
               </div>
             </div>
 
-            {/* Exercise Instructions - Expandable */}
-            {currentExercise.exercise?.card && (
-              <div className="mb-4">
-                <button
-                  onClick={() => setShowInstructions(!showInstructions)}
-                  className="flex items-center gap-2 text-sm font-medium text-rose-600 hover:text-rose-700 dark:text-rose-400 dark:hover:text-rose-300 transition-colors"
-                >
-                  <Info className="h-4 w-4" />
-                  {showInstructions ? (locale === 'es' ? 'Ocultar instrucciones' : 'Hide instructions') : (locale === 'es' ? '¿Cómo se hace?' : 'How to do it?')}
-                  <ChevronDown className={`h-4 w-4 transition-transform ${showInstructions ? 'rotate-180' : ''}`} />
-                </button>
-
-                {showInstructions && (
-                  <div className="mt-3 space-y-3 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700">
-                    {/* Position */}
-                    {currentExercise.exercise.card.position && (
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                          <Target className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide mb-0.5">
-                            {locale === 'es' ? 'Posición' : 'Position'}
-                          </p>
-                          <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                            {currentExercise.exercise.card.position[locale as 'en' | 'es'] || currentExercise.exercise.card.position.es}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Movement */}
-                    {currentExercise.exercise.card.movement && (
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
-                          <Dumbbell className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide mb-0.5">
-                            {locale === 'es' ? 'Movimiento' : 'Movement'}
-                          </p>
-                          <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                            {currentExercise.exercise.card.movement[locale as 'en' | 'es'] || currentExercise.exercise.card.movement.es}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Key Cue */}
-                    {currentExercise.exercise.card.keyCue && (
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
-                          <Lightbulb className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wide mb-0.5">
-                            {locale === 'es' ? 'Clave' : 'Key Cue'}
-                          </p>
-                          <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                            {currentExercise.exercise.card.keyCue[locale as 'en' | 'es'] || currentExercise.exercise.card.keyCue.es}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Common Mistake */}
-                    {currentExercise.exercise.card.commonMistake && (
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-                          <AlertTriangle className="h-3.5 w-3.5 text-red-600 dark:text-red-400" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-wide mb-0.5">
-                            {locale === 'es' ? 'Error común' : 'Common Mistake'}
-                          </p>
-                          <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                            {currentExercise.exercise.card.commonMistake[locale as 'en' | 'es'] || currentExercise.exercise.card.commonMistake.es}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Safety Tip */}
-                    {currentExercise.exercise.card.safetyTip && (
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-                          <Shield className="h-3.5 w-3.5 text-purple-600 dark:text-purple-400" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wide mb-0.5">
-                            {locale === 'es' ? 'Seguridad' : 'Safety'}
-                          </p>
-                          <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                            {currentExercise.exercise.card.safetyTip[locale as 'en' | 'es'] || currentExercise.exercise.card.safetyTip.es}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-
             {/* Progression Info */}
             {currentSuggestion && currentSuggestion.progressionReason !== 'first_time' && (
               <div className="flex items-center gap-2 mb-4 p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20">
@@ -528,13 +413,93 @@ export function ProgramSessionView({
               </div>
             </div>
 
-            {/* Notes */}
-            {currentExercise.notes && (
-              <div className="mt-4 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-start gap-2">
-                <Info className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-blue-700 dark:text-blue-400">
-                  {currentExercise.notes[locale as 'en' | 'es'] || currentExercise.notes.es}
-                </p>
+            {/* Exercise Instructions - Always Visible */}
+            {currentExercise.exercise?.card && (
+              <div className="mt-4 space-y-2.5 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700">
+                {/* Position */}
+                {currentExercise.exercise.card.position && (
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                      <Target className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide mb-0.5">
+                        {locale === 'es' ? 'Posición' : 'Position'}
+                      </p>
+                      <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        {currentExercise.exercise.card.position[locale as 'en' | 'es'] || currentExercise.exercise.card.position.es}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Movement */}
+                {currentExercise.exercise.card.movement && (
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                      <Dumbbell className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide mb-0.5">
+                        {locale === 'es' ? 'Movimiento' : 'Movement'}
+                      </p>
+                      <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        {currentExercise.exercise.card.movement[locale as 'en' | 'es'] || currentExercise.exercise.card.movement.es}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Key Cue */}
+                {currentExercise.exercise.card.keyCue && (
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                      <Lightbulb className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wide mb-0.5">
+                        {locale === 'es' ? 'Clave' : 'Key Cue'}
+                      </p>
+                      <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        {currentExercise.exercise.card.keyCue[locale as 'en' | 'es'] || currentExercise.exercise.card.keyCue.es}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Common Mistake */}
+                {currentExercise.exercise.card.commonMistake && (
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
+                      <AlertTriangle className="h-3.5 w-3.5 text-red-600 dark:text-red-400" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-wide mb-0.5">
+                        {locale === 'es' ? 'Error común' : 'Common Mistake'}
+                      </p>
+                      <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        {currentExercise.exercise.card.commonMistake[locale as 'en' | 'es'] || currentExercise.exercise.card.commonMistake.es}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Safety Tip */}
+                {currentExercise.exercise.card.safetyTip && (
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                      <Shield className="h-3.5 w-3.5 text-purple-600 dark:text-purple-400" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wide mb-0.5">
+                        {locale === 'es' ? 'Seguridad' : 'Safety'}
+                      </p>
+                      <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                        {currentExercise.exercise.card.safetyTip[locale as 'en' | 'es'] || currentExercise.exercise.card.safetyTip.es}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </CardContent>
